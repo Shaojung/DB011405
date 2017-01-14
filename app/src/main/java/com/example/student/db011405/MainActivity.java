@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,4 +40,27 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+    public void click2(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("輸入框");
+        builder.setMessage("輸入用對話框");
+        EditText ed = new EditText(MainActivity.this);
+        builder.setView(ed);
+
+        builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "按下了確定", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "按下了取消", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+
 }
