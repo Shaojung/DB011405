@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("輸入框");
         builder.setMessage("輸入用對話框");
-        EditText ed = new EditText(MainActivity.this);
+        final EditText ed = new EditText(MainActivity.this);
         builder.setView(ed);
 
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "按下了確定", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "按下了確定:" + ed.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
