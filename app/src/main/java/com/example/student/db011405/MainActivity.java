@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int fruitid;
+    int fruitid, tmp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         builder.setSingleChoiceItems(R.array.fruits, fruitid, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                fruitid = which;
+                tmp = which;
             }
         });
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                fruitid = tmp;
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
