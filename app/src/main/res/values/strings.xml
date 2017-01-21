@@ -5,4 +5,10 @@
         <item>香蕉</item>
         <item>柳丁</item>
     </string-array>
+    <string-array name="drinks">
+        <item>可樂</item>
+        <item>果汁</item>
+        <item>紅茶</item>
+        <item>咖啡</item>
+    </string-array>
 </resources>

@@ -80,13 +80,33 @@ public class MainActivity extends AppCompatActivity {
                 String str[] = getResources().getStringArray(R.array.fruits);
                 TextView tv = (TextView) findViewById(R.id.textView);
                 tv.setText(str[fruitid]);
-
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(MainActivity.this, "按下了取消", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+
+    public void click4(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("列表");
+        builder.setItems(R.array.drinks, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String drinks[] = getResources().getStringArray(R.array.drinks);
+                TextView tv2 = (TextView) findViewById(R.id.textView2);
+                tv2.setText(drinks[which]);
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Toast.makeText(MainActivity.this, "按下了取消", Toast.LENGTH_SHORT).show();
             }
         });
         builder.show();
