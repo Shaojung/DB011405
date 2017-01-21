@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -137,6 +138,16 @@ public class MainActivity extends AppCompatActivity {
                 // Toast.makeText(MainActivity.this, "按下了取消", Toast.LENGTH_SHORT).show();
             }
         });
+        builder.show();
+    }
+    public void click6(View v)
+    {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.mylayout, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("自訂 Dialog");
+        builder.setView(layout);
         builder.show();
     }
 
