@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -76,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 fruitid = tmp;
+                String str[] = getResources().getStringArray(R.array.fruits);
+                TextView tv = (TextView) findViewById(R.id.textView);
+                tv.setText(str[fruitid]);
+
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
