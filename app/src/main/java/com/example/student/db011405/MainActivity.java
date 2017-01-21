@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -144,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
     {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.mylayout, null);
+        final TextView tv3 = (TextView) layout.findViewById(R.id.textView3);
+        Button btn6 = (Button) layout.findViewById(R.id.button6);
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv3.setText("Hello World");
+            }
+        });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("自訂 Dialog");
