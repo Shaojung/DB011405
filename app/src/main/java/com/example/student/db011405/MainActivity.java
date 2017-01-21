@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int fruitid, tmp;
+    boolean[] b = new boolean[4];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +102,32 @@ public class MainActivity extends AppCompatActivity {
                 String drinks[] = getResources().getStringArray(R.array.drinks);
                 TextView tv2 = (TextView) findViewById(R.id.textView2);
                 tv2.setText(drinks[which]);
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Toast.makeText(MainActivity.this, "按下了取消", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+
+    public void click5(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("列表");
+
+        builder.setMultiChoiceItems(R.array.drinks, b, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+
+            }
+        });
+        builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
