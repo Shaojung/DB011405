@@ -1,5 +1,6 @@
 package com.example.student.db011405;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -159,6 +160,27 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("自訂 Dialog");
         builder.setView(layout);
         builder.show();
+    }
+
+    public void click8(View v)
+    {
+        final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setTitle("訊息");
+        progressDialog.setMessage("請稍候");
+        progressDialog.show();
+
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        }.start();
     }
 
 }
